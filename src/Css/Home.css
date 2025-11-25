@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+
+  background: #000000;
+}
+.home-title {
+  color: white;
+}
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: flex; /* Activa flexbox */
+  justify-content: center; /* Centra horizontal */
+  align-items: center;
+}
+.embla__slide img {
+  border-radius: 10px;
+  box-shadow: #ffffff 0px 1px 10px;
+  width: 100%;
+  max-width: 500px; /* tamaño límite opcional */
+  height: auto;
+  object-fit: contain; /* mantiene proporciones */
+}
