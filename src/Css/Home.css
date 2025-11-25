@@ -1,29 +1,138 @@
+/* Layout para mantener el footer abajo */
+.home-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
-
   background: #000000;
 }
-.home-title {
-  color: white;
+
+.home-container {
+  flex: 1;
+  padding: 20px;
 }
+
+/* Header */
+.contenedor-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.contenedor-nav img {
+  height: 100px;
+  width: auto;
+  max-width: 500px;
+  filter: drop-shadow(-1px 1px 10px rgba(255, 255, 255, 0.6));
+  flex-shrink: 0;
+}
+
+.contenedor-nav > :nth-child(2) {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Carrusel */
+.home-content {
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.navbar {
+  padding-top: 19px;
+}
+
 .embla {
   overflow: hidden;
 }
+
 .embla__container {
   display: flex;
 }
+
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
-  display: flex; /* Activa flexbox */
-  justify-content: center; /* Centra horizontal */
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
+
 .embla__slide img {
   border-radius: 10px;
   box-shadow: #ffffff 0px 1px 10px;
-  width: 100%;
-  max-width: 500px; /* tamaño límite opcional */
+  width: 150%;
+  max-width: 600px;
   height: auto;
-  object-fit: contain; /* mantiene proporciones */
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .contenedor-nav img {
+    height: 80px;
+    max-width: 300px;
+  }
+
+  .contenedor-nav > :nth-child(2) {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar {
+    padding-top: 0px;
+  }
+
+  .home-content {
+    margin-top: 30px;
+    padding: 0 15px;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .contenedor-nav {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .contenedor-nav img {
+    height: 60px;
+    max-width: 250px;
+  }
+  .embla__slide img {
+    border-radius: 10px;
+    box-shadow: #ffffff 0px 1px 10px;
+    width: 95%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .navbar {
+    padding-top: 0px;
+  }
+
+  .home-content {
+    margin-top: 20px;
+  }
 }

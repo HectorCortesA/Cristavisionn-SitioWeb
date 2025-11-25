@@ -14,26 +14,39 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Botón Contactanos */}
         <div className="button-wrap">
           <button onClick={() => handleNavigation("contactanos")}>
-            <span>Contactanos</span>
+            <span>Inicio</span>
           </button>
           <div className="button-shadow"></div>
         </div>
-
-        {/* Botón ¿Quienes somos? */}
         <div className="button-wrap">
           <button onClick={() => handleNavigation("quienes-somos")}>
             <span>¿Quienes somos?</span>
           </button>
           <div className="button-shadow"></div>
         </div>
-
-        {/* Botón Nuestros Clientes */}
+        <div className="button-wrap">
+          <button onClick={() => handleNavigation("contactanos")}>
+            <span>Contacto</span>
+          </button>
+          <div className="button-shadow"></div>
+        </div>
         <div className="button-wrap">
           <button onClick={() => handleNavigation("nuestros-clientes")}>
             <span>Nuestros Clientes</span>
+          </button>
+          <div className="button-shadow"></div>
+        </div>
+        <div className="button-wrap">
+          <button onClick={() => handleNavigation("quienes-somos")}>
+            <span>Proyecto</span>
+          </button>
+          <div className="button-shadow"></div>
+        </div>
+        <div className="button-wrap">
+          <button onClick={() => handleNavigation("quienes-somos")}>
+            <span>Cotiza</span>
           </button>
           <div className="button-shadow"></div>
         </div>
