@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../Css/Nabar.css";
 
 interface NavbarProps {
@@ -6,50 +7,41 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const handleNavigation = (section: string) => {
-    console.log(`Navegando a: ${section}`);
-    // Tu lógica de navegación aquí
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
   };
+
+  // Función para verificar si la ruta está activa
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
+  const menuItems = [
+    { path: "/", label: "Inicio" },
+    { path: "/quienesomos", label: "¿Quienes somos?" },
+    { path: "/contacto", label: "Contacto" },
+    { path: "/nuestros-clientes", label: "Nuestros Clientes" },
+    { path: "/proyectos", label: "Proyectos" },
+    { path: "/cotiza", label: "Cotiza" },
+  ];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="button-wrap">
-          <button onClick={() => handleNavigation("contactanos")}>
-            <span>Inicio</span>
-          </button>
-          <div className="button-shadow"></div>
-        </div>
-        <div className="button-wrap">
-          <button onClick={() => handleNavigation("quienes-somos")}>
-            <span>¿Quienes somos?</span>
-          </button>
-          <div className="button-shadow"></div>
-        </div>
-        <div className="button-wrap">
-          <button onClick={() => handleNavigation("contactanos")}>
-            <span>Contacto</span>
-          </button>
-          <div className="button-shadow"></div>
-        </div>
-        <div className="button-wrap">
-          <button onClick={() => handleNavigation("nuestros-clientes")}>
-            <span>Nuestros Clientes</span>
-          </button>
-          <div className="button-shadow"></div>
-        </div>
-        <div className="button-wrap">
-          <button onClick={() => handleNavigation("quienes-somos")}>
-            <span>Proyecto</span>
-          </button>
-          <div className="button-shadow"></div>
-        </div>
-        <div className="button-wrap">
-          <button onClick={() => handleNavigation("quienes-somos")}>
-            <span>Cotiza</span>
-          </button>
-          <div className="button-shadow"></div>
-        </div>
+        {menuItems.map((item) => (
+          <div key={item.path} className="button-wrap">
+            <button
+              onClick={() => handleNavigation(item.path)}
+              className={`nav-button ${isActive(item.path) ? "active" : ""}`}
+            >
+              <span>{item.label}</span>
+            </button>
+            <div className="button-shadow"></div>
+          </div>
+        ))}
       </div>
     </nav>
   );

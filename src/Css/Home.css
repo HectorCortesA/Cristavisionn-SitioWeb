@@ -1,5 +1,5 @@
 /* Layout para mantener el footer abajo */
-.home-layout {
+.home-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,11 +10,6 @@ body {
   background: #000000;
 }
 
-.home-container {
-  flex: 1;
-  padding: 20px;
-}
-
 /* Header */
 .contenedor-nav {
   display: flex;
@@ -23,13 +18,14 @@ body {
   gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
+  padding-top: 70px;
 }
 
 .contenedor-nav img {
-  height: 100px;
+  height: 60px;
   width: auto;
-  max-width: 500px;
+  max-width: 450px;
   filter: drop-shadow(-1px 1px 10px rgba(255, 255, 255, 0.6));
   flex-shrink: 0;
 }
@@ -40,15 +36,12 @@ body {
   justify-content: flex-end;
 }
 
-/* Carrusel */
+/* HOME CONTENT - FUERA DEL CONTENEDOR-NAV */
 .home-content {
+  flex: 1; /* Esto hace que ocupe el espacio restante */
   max-width: 1400px;
   margin: 40px auto 0;
   padding: 0 20px;
-}
-
-.navbar {
-  padding-top: 19px;
 }
 
 .embla {
@@ -74,6 +67,11 @@ body {
   max-width: 600px;
   height: auto;
   object-fit: contain;
+}
+
+/* FOOTER - SE MANTIENE ABAJO */
+.footer-container {
+  margin-top: auto; /* Empuja el footer hacia abajo */
 }
 
 /* Responsive */
@@ -106,7 +104,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .home-container {
+  .home-page {
     padding: 10px;
   }
 
@@ -119,6 +117,7 @@ body {
     height: 60px;
     max-width: 250px;
   }
+
   .embla__slide img {
     border-radius: 10px;
     box-shadow: #ffffff 0px 1px 10px;
