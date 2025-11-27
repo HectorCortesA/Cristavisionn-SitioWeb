@@ -23,8 +23,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     { path: "/", label: "Inicio" },
     { path: "/quienesomos", label: "¿Quienes somos?" },
     { path: "/contacto", label: "Contacto" },
-    { path: "/nuestros-clientes", label: "Nuestros Clientes" },
-    { path: "/proyectos", label: "Proyectos" },
+    { path: "/Proyectos", label: "Proyectos" },
     { path: "/cotiza", label: "Cotiza" },
   ];
 

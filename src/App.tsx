@@ -4,6 +4,7 @@ import HomeScreen from "./Screens/HomeScreen";
 import Contact from "./Screens/Contact";
 import Quienesomos from "./Screens/Quienesomos";
 import Cotiza from "./Screens/cotiza";
+import Proyectos from "./Screens/Proyectos";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/Contacto" element={<Contact />} />
         <Route path="/Quienesomos" element={<Quienesomos />} />
         <Route path="/Cotiza" element={<Cotiza />} />
+        <Route path="/Proyectos" element={<Proyectos />} />
       </Routes>
     </div>
   );

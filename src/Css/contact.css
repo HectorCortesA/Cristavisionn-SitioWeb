@@ -8,6 +8,7 @@ body {
   margin: 0;
   background: #000000;
 }
+
 .contenedor-nav {
   display: flex;
   align-items: center;
@@ -33,22 +34,53 @@ body {
   justify-content: flex-end;
 }
 
+.contact-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .contact-title {
   display: flex;
   color: white;
   padding-left: 150px;
   padding-bottom: 57px;
   padding-top: 30px;
+  font-size: 36px;
+  margin: 0;
 }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
 .contact-item {
   display: flex;
-
+  align-items: center;
   width: 256px;
   height: 63px;
   padding-left: 150px;
+  gap: 15px;
 }
+
 .contact-item p {
   color: white;
+  margin: 0;
+  font-size: 18px;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-section {
+  margin-bottom: 40px;
 }
 
 .section-title {
@@ -57,8 +89,9 @@ body {
   font-size: 24px;
   font-weight: 600;
   margin: 0;
-  text-align: left; /* A la izquierda, no centrado */
+  text-align: left;
   padding-left: 150px;
+  margin-bottom: 20px;
 }
 
 .social-icons {
@@ -87,10 +120,203 @@ body {
   transform: translateY(-2px);
 }
 
+.ubicacion-section {
+  margin-bottom: 40px;
+  margin-top: -200px;
+}
+
+.ubicacion-section h2 {
+  display: flex;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+  padding-left: 150px;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+.ubicacion-section iframe {
+  display: flex;
+  border-radius: 30px;
+  margin-left: 150px;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(254, 254, 254, 0.5);
+  width: calc(100% - 300px);
+  max-width: 600px;
+}
+
 .formulario {
   display: flex;
   justify-content: flex-end;
-  padding-right: 200px;
-  margin-top: -350px;
+  padding-right: 150px;
+  margin-top: -450px;
   padding-bottom: 55px;
+}
+
+/* ========== TABLET (768px - 1024px) ========== */
+@media (max-width: 1024px) {
+  .contenedor-nav {
+    padding: 20px;
+    padding-top: 50px;
+    gap: 30px;
+    max-width: 90%;
+  }
+
+  .contenedor-nav img {
+    height: 50px;
+    max-width: 300px;
+  }
+
+  .contact-container {
+    max-width: 90%;
+  }
+
+  .contact-title {
+    padding-left: 0;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    font-size: 32px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .contact-item {
+    padding-left: 0;
+    width: auto;
+    height: auto;
+    justify-content: center;
+  }
+
+  .section-title {
+    padding-left: 0;
+    font-size: 22px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    padding-left: 0;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .social-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .divider {
+    margin: 30px 50px;
+  }
+
+  .ubicacion-section h2 {
+    padding-left: 0;
+    justify-content: center;
+    text-align: center;
+    padding-top: 190px;
+  }
+
+  .ubicacion-section iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 500px;
+    height: 300px;
+  }
+
+  .formulario {
+    padding-right: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+}
+
+/* ========== MOBILE (480px - 767px) ========== */
+@media (max-width: 767px) {
+  .contenedor-nav {
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 30px;
+    gap: 20px;
+    text-align: center;
+    max-width: 95%;
+  }
+
+  .contenedor-nav img {
+    height: 45px;
+    max-width: 250px;
+  }
+
+  .contenedor-nav > :nth-child(2) {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact-container {
+    max-width: 95%;
+  }
+
+  .contact-title {
+    padding-left: 0;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    font-size: 28px;
+  }
+
+  .contact-item {
+    padding-left: 0;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .contact-item p {
+    font-size: 16px;
+  }
+
+  .section-title {
+    padding-left: 0;
+    font-size: 20px;
+  }
+
+  .social-icons {
+    padding-left: 0;
+    gap: 15px;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .divider {
+    margin: 25px 20px;
+  }
+
+  .ubicacion-section h2 {
+    padding-left: 0;
+    padding-top: 190px;
+    font-size: 22px;
+  }
+
+  .ubicacion-section iframe {
+    width: 95%;
+    height: 250px;
+    border-radius: 20px;
+  }
+
+  .formulario {
+    margin-top: 30px;
+    padding-bottom: 0;
+  }
 }

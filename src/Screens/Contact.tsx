@@ -99,6 +99,18 @@ function Contact() {
         <div className="formulario">
           <Formulario />
         </div>
+        <section className="ubicacion-section">
+          <h2>Ubicación</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d235.74908616778808!2d-98.3103256066863!3d19.020365944170997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x85cfc80a41e40097%3A0x640d997168c0512e!2sAtlixco%2014%2C%20La%20Pur%C3%ADsima%2C%20San%20Francisco%20Acatepec%2C%2072846%20San%20Andr%C3%A9s%20Cholula%2C%20Pue.!3m2!1d19.0205141!2d-98.3102342!5e0!3m2!1ses-419!2smx!4v1764276621640!5m2!1ses-419!2smx"
+            width="400"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
       </div>
       <Footer />
     </div>
