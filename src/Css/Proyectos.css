@@ -1,0 +1,42 @@
+.proyectos-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  background: #000000;
+}
+
+.contenedor-nav img {
+  height: 60px;
+  width: auto;
+  max-width: 450px;
+  filter: drop-shadow(-1px 1px 10px rgba(255, 255, 255, 0.6));
+  flex-shrink: 0;
+}
+.contenedor-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 70px;
+}
+
+.contenedor-nav > :nth-child(2) {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* HOME CONTENT - FUERA DEL CONTENEDOR-NAV */
+.home-content {
+  flex: 1; /* Esto hace que ocupe el espacio restante */
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
