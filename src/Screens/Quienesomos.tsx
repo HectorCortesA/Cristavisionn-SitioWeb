@@ -10,6 +10,9 @@ function Quienesomos() {
         <div className="navbar">
           <Navbar />
         </div>
+        <div className="Contenido">
+          <p>Somo una empresa con mas de 50 años de trayectoria </p>
+        </div>
       </div>
 
       <Footer />
