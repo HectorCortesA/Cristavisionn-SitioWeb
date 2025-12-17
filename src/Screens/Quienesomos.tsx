@@ -1,6 +1,7 @@
 import Navbar from "../Components/navbar";
 import { Footer } from "../Components/Footer";
 import crista from "../assets/Logo/Cristavissioon.png";
+import "../Css/Quienesomos.css";
 
 function Quienesomos() {
   return (
@@ -11,11 +12,10 @@ function Quienesomos() {
           <Navbar />
         </div>
       </div>
-      <div
-        className="Contenido"
-        style={{ textAlign: "center", color: "white" }}
-      >
-        <h1>Compromiso y calidad en cancelería de aluminio</h1>
+      <div className="Contenido" style={{ color: "white" }}>
+        <div className="conte-title">
+          <h1>Compromiso y calidad en cancelería de aluminio</h1>
+        </div>
         <div className="text-descriptivo">
           <p>
             Somos una empresa con más de 37 años de experiencia, comprometida
@@ -33,18 +33,20 @@ function Quienesomos() {
             cumplir con los más altos estándares de calidad.
           </p>
         </div>
-        <div className="divider">
+        <div className="contenedor-valores">
           <h2>Valores de la empresa</h2>
         </div>
         <div className="contenedor-experencia">
           <p>Más de 37 años de experiencia</p>
         </div>
-        <div className="Contenedor-Servicios">
+        <div className="Servicios">
           <h2>Servicios</h2>
-          <ul>Cancelería en aluminio</ul>
-          <ul>Cancelería en vidrio</ul>
-          <ul>Cancelería en vidrio templado</ul>
-          <ul>Diseños personalizados</ul>
+          <div className="Contenedor-Servicios">
+            <ul>Cancelería en aluminio</ul>
+            <ul>Cancelería en vidrio</ul>
+            <ul>Cancelería en vidrio templado</ul>
+            <ul>Diseños personalizados</ul>
+          </div>
         </div>
         <div className="Zona">
           <h3>Servicio dentro y fuera de la ciudad</h3>
