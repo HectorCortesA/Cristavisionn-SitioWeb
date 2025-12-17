@@ -1,6 +1,7 @@
 import Navbar from "../Components/navbar";
 import { Footer } from "../Components/Footer";
 import crista from "../assets/Logo/Cristavissioon.png";
+import "../Css/cotiza.css";
 
 function cotiza() {
   return (

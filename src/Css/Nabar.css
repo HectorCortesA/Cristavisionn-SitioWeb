@@ -293,7 +293,6 @@ button:active::after {
 @media (max-width: 850px) {
   .navbar {
     width: 100%;
-    max-width: 808px;
     height: auto;
     min-height: 63px;
   }
