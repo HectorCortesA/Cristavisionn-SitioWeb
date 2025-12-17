@@ -20,14 +20,6 @@ body {
   padding-top: 70px;
 }
 
-.contenedor-nav img {
-  height: 60px;
-  width: auto;
-  max-width: 450px;
-  filter: drop-shadow(-1px 1px 10px rgba(255, 255, 255, 0.6));
-  flex-shrink: 0;
-}
-
 .contenedor-nav > :nth-child(2) {
   flex: 1;
   display: flex;
