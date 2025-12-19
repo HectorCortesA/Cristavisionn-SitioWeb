@@ -16,7 +16,7 @@ function Cotiza() {
       </div>
       <div className="cotiza-content">
         <div className="cotiza-header">
-          <h1>Cotización de Cristalería</h1>
+          <h1>Cotización</h1>
           <p className="cotiza-subtitle">
             Solicite su presupuesto personalizado. Complete el formulario y
             recibirá una cotización detallada en menos de 24 horas.

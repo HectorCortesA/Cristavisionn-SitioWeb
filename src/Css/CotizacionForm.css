@@ -46,6 +46,8 @@
 }
 
 .form-header h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
   font-size: 2.5rem;
   color: white;
   margin-bottom: 10px;
@@ -53,6 +55,8 @@
 }
 
 .subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   color: #bbb;
   font-size: 1.1rem;
   margin-bottom: 30px;
@@ -61,6 +65,8 @@
 
 /* Secciones del formulario */
 .form-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   font-size: 1.4rem;
   color: white;
   margin: 30px 0 20px 0;
@@ -83,6 +89,8 @@
 }
 
 .form-group label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   display: block;
   margin-bottom: 10px;
   color: #ddd;
@@ -99,10 +107,11 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   color: white;
   font-size: 1rem;
   transition: all 0.3s ease;
-  font-family: inherit;
 }
 
 .form-group input:focus,
@@ -194,7 +203,6 @@
   gap: 20px;
   justify-content: center;
   margin: 40px 0 20px;
-  flex-wrap: wrap;
 }
 
 .btn-submit,
@@ -251,16 +259,17 @@
   }
 
   .form-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
   }
 
   .btn-submit,
   .btn-clear {
-    width: 100%;
-    min-width: auto;
-    padding: 14px 30px;
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.9rem;
   }
 
   .form-group {
@@ -292,10 +301,22 @@
     padding: 12px 15px;
     font-size: 0.95rem;
   }
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding-left: 40px;
+  }
 
   .btn-submit,
   .btn-clear {
-    font-size: 24px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 13px;
+
+    height: 50px;
+    width: 200px;
   }
 
   .terms-section {
@@ -362,4 +383,26 @@
 
 .form-group textarea::-webkit-scrollbar-thumb:hover {
   background: rgba(131, 60, 60, 0.7);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets//fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
