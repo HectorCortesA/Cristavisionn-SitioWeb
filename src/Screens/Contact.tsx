@@ -1,6 +1,6 @@
 import "../Css/contact.css";
 import Navbar from "../Components/navbar";
-import crista from "../assets/Logo/Cristavissioon.png";
+import crista from "../assets/Logo/Cristavicioon.webp";
 import { Formulario } from "../Components/formulario";
 import { Footer } from "../Components/Footer";
 

@@ -1,10 +1,16 @@
 import "../Css/Proyectos.css";
 import Navbar from "../Components/navbar";
-import crista from "../assets/Logo/Cristavissioon.png";
-import { useState } from "react";
+import crista from "../assets/Logo/Cristavicioon.webp";
+import { useState, useCallback } from "react";
 import MenuHorizontal from "../Components/Proyectos/MenuHorizontal";
 import ProyectoSection from "../Components/Proyectos/ProyectoSection";
-import type { SectionType, ShowAllState } from "../types/proyectos.types";
+import ImageViewer from "../Components/Proyectos/ImageViewer";
+import { Footer } from "../Components/Footer";
+import type {
+  SectionType,
+  ShowAllState,
+  ImageType,
+} from "../types/proyectos.types";
 
 function Proyectos() {
   const [activeSection, setActiveSection] = useState<string>("proyectos");
@@ -15,6 +21,15 @@ function Proyectos() {
     design: false,
     ecommerce: false,
     otros: false,
+  });
+  const [viewerState, setViewerState] = useState<{
+    isOpen: boolean;
+    currentSection: string | null;
+    currentImageId: number | null;
+  }>({
+    isOpen: false,
+    currentSection: null,
+    currentImageId: null,
   });
 
   // Secciones del menú
@@ -103,6 +118,8 @@ function Proyectos() {
         { id: 6, alt: "Otros 6" },
       ],
     },
+
+    // ... otras secciones igual que antes
   ];
 
   // Función para hacer scroll a una sección
@@ -123,6 +140,111 @@ function Proyectos() {
       ...prev,
       [sectionId]: !prev[sectionId],
     }));
+  };
+
+  // Función para abrir el visor de imágenes
+  const handleImageClick = useCallback((sectionId: string, imageId: number) => {
+    setViewerState({
+      isOpen: true,
+      currentSection: sectionId,
+      currentImageId: imageId,
+    });
+  }, []);
+
+  // Función para cerrar el visor
+  const handleCloseViewer = useCallback(() => {
+    setViewerState({
+      isOpen: false,
+      currentSection: null,
+      currentImageId: null,
+    });
+  }, []);
+
+  // Función para navegar a la siguiente imagen
+  const handleNextImage = useCallback(() => {
+    if (viewerState.currentSection && viewerState.currentImageId) {
+      const currentSection = sections.find(
+        (s) => s.id === viewerState.currentSection
+      );
+      if (currentSection) {
+        const currentIndex = currentSection.images.findIndex(
+          (img) => img.id === viewerState.currentImageId
+        );
+        if (currentIndex < currentSection.images.length - 1) {
+          setViewerState((prev) => ({
+            ...prev,
+            currentImageId: currentSection.images[currentIndex + 1].id,
+          }));
+        }
+      }
+    }
+  }, [viewerState, sections]);
+
+  // Función para navegar a la imagen anterior
+  const handlePrevImage = useCallback(() => {
+    if (viewerState.currentSection && viewerState.currentImageId) {
+      const currentSection = sections.find(
+        (s) => s.id === viewerState.currentSection
+      );
+      if (currentSection) {
+        const currentIndex = currentSection.images.findIndex(
+          (img) => img.id === viewerState.currentImageId
+        );
+        if (currentIndex > 0) {
+          setViewerState((prev) => ({
+            ...prev,
+            currentImageId: currentSection.images[currentIndex - 1].id,
+          }));
+        }
+      }
+    }
+  }, [viewerState, sections]);
+
+  // Obtener imagen actual para el visor
+  const getCurrentImage = (): ImageType | null => {
+    if (!viewerState.currentSection || !viewerState.currentImageId) return null;
+
+    const currentSection = sections.find(
+      (s) => s.id === viewerState.currentSection
+    );
+    if (!currentSection) return null;
+
+    return (
+      currentSection.images.find(
+        (img) => img.id === viewerState.currentImageId
+      ) || null
+    );
+  };
+
+  // Verificar si hay siguiente/imagen anterior
+  const hasNext = (): boolean => {
+    if (!viewerState.currentSection || !viewerState.currentImageId)
+      return false;
+
+    const currentSection = sections.find(
+      (s) => s.id === viewerState.currentSection
+    );
+    if (!currentSection) return false;
+
+    const currentIndex = currentSection.images.findIndex(
+      (img) => img.id === viewerState.currentImageId
+    );
+    return currentIndex < currentSection.images.length - 1;
+  };
+
+  const hasPrev = (): boolean => {
+    if (!viewerState.currentSection || !viewerState.currentImageId)
+      return false;
+
+    const currentSection = sections.find(
+      (s) => s.id === viewerState.currentSection
+    );
+    if (!currentSection) return false;
+
+    const currentIndex = currentSection.images.findIndex(
+      (img) => img.id === viewerState.currentImageId
+    );
+    return currentIndex > 0;
   };
 
   // Datos para el menú horizontal
@@ -160,10 +282,23 @@ function Proyectos() {
               images={section.images}
               showAll={showAll[section.id]}
               onToggleShowAll={toggleShowAll}
+              onImageClick={handleImageClick}
             />
           ))}
         </main>
       </div>
+
+      {/* Visor de imágenes modal */}
+      <ImageViewer
+        isOpen={viewerState.isOpen}
+        onClose={handleCloseViewer}
+        image={getCurrentImage()}
+        onNext={handleNextImage}
+        onPrev={handlePrevImage}
+        hasNext={hasNext()}
+        hasPrev={hasPrev()}
+      />
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Navbar from "../Components/navbar";
 import { Footer } from "../Components/Footer";
-import crista from "../assets/Logo/Cristavissioon.png";
+import crista from "../assets/Logo/Cristavicioon.webp";
 import CotizacionForm from "../Components/CotizacionForm";
 import "../Css/cotiza.css";
 

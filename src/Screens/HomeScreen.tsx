@@ -1,7 +1,7 @@
 import "../Css/Home.css";
 import Carousel from "../Components/ui/carousel";
 import Navbar from "../Components/navbar";
-import crista from "../assets/Logo/Cristavissioon.png";
+import crista from "../assets/Logo/Cristavicioon.webp";
 import { Footer } from "../Components/Footer";
 
 function HomeScreens() {

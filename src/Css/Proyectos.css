@@ -22,6 +22,7 @@ body {
 }
 
 .contenedor-nav img {
+  border-radius: 10px;
   height: 60px;
   width: auto;
   max-width: 450px;
@@ -188,21 +189,11 @@ body {
   display: block;
   margin: 0 auto;
   padding: 12px 30px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
   color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.show-more-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* RESPONSIVE */

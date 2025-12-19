@@ -13,6 +13,7 @@ body {
   padding-top: 70px;
 }
 .contenedor-nav img {
+  border-radius: 10px;
   height: 60px;
   width: auto;
   max-width: 450px;
