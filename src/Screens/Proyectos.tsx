@@ -51,24 +51,22 @@ function Proyectos() {
 
   // Todas las imágenes en un array
   const allImages = [
-    { id: 1, src: a1, alt: "Proyecto 1 - Diseño moderno" },
-    { id: 2, src: a2, alt: "Proyecto 2 - Interfaz elegante" },
-    { id: 3, src: a3, alt: "Proyecto 3 - Layout innovador" },
-    { id: 4, src: a4, alt: "Proyecto 4 - UI minimalista" },
-    { id: 5, src: a5, alt: "Proyecto 5 - Experiencia fluida" },
-    { id: 6, src: a6, alt: "Proyecto 6 - Diseño responsivo" },
-    { id: 7, src: a7, alt: "Proyecto 7 - Concepto creativo" },
-    { id: 8, src: a8, alt: "Proyecto 8 - Paleta de colores" },
-    { id: 9, src: a9, alt: "Proyecto 9 - Tipografía moderna" },
-    { id: 10, src: a10, alt: "Proyecto 10 - Animaciones suaves" },
-    { id: 11, src: a11, alt: "Proyecto 11 - Navegación intuitiva" },
-    { id: 12, src: a12, alt: "Proyecto 12 - Branding consistente" },
-    { id: 13, src: a13, alt: "Proyecto 13 - Wireframes detallados" },
-    { id: 14, src: a14, alt: "Proyecto 14 - Prototipo interactivo" },
-    { id: 15, src: a15, alt: "Proyecto 15 - Diseño final" },
-    { id: 16, src: a17, alt: "Proyecto 16 - Vista completa" }, // Usando a17 como 16
-    // Si tuvieras a16: { id: 16, src: a16, alt: "Proyecto 16 - Detalle técnico" },
-    // { id: 17, src: a17, alt: "Proyecto 17 - Presentación final" },
+    { id: 1, src: a1, alt: "Proyecto 1 " },
+    { id: 2, src: a2, alt: "Proyecto 1" },
+    { id: 3, src: a3, alt: "Proyecto 1" },
+    { id: 4, src: a4, alt: "Proyecto 1" },
+    { id: 5, src: a5, alt: "Proyecto 1" },
+    { id: 6, src: a6, alt: "Proyecto 1" },
+    { id: 7, src: a7, alt: "Proyecto 2" },
+    { id: 8, src: a8, alt: "Proyecto 2" },
+    { id: 9, src: a9, alt: "Proyecto 2" },
+    { id: 10, src: a10, alt: "Proyecto 2" },
+    { id: 11, src: a11, alt: "Proyecto 3" },
+    { id: 12, src: a12, alt: "Proyecto 3" },
+    { id: 13, src: a13, alt: "Proyecto 3" },
+    { id: 14, src: a14, alt: "Proyecto 3" },
+    { id: 15, src: a15, alt: "Proyecto 3" },
+    { id: 16, src: a17, alt: "Proyecto 3" },
   ];
 
   // Secciones del menú - Dividiendo las imágenes en grupos
@@ -77,8 +75,7 @@ function Proyectos() {
       id: "proyectos",
       label: "Destacados",
       title: "Proyectos Destacados",
-      description:
-        "Una selección de mis mejores trabajos y diseños más impactantes",
+      description: "Una selección de mis mejores trabajos",
       images: [
         allImages[0], // a1
         allImages[1], // a2
@@ -92,7 +89,7 @@ function Proyectos() {
       id: "proyecto1",
       label: "Casa habitación 1",
       title: "Casa habitación 1",
-      description: "Desarrollo de aplicaciones web modernas y funcionales",
+      description: "Casa habitación moderna y funcional",
       images: [
         allImages[7], // a4
         allImages[8], // a5
@@ -102,9 +99,9 @@ function Proyectos() {
     },
     {
       id: "proyecto2",
-      label: "Diseño UI",
-      title: "Diseño de Interfaces",
-      description: "Interfaces de usuario atractivas y experiencias digitales",
+      label: "Casa habitación 2",
+      title: "Casa habitación 2",
+      description: "Casa habitación moderna y funcional",
       images: [
         allImages[11], // a9
         allImages[12], // a10
@@ -115,9 +112,9 @@ function Proyectos() {
     },
     {
       id: "proyecto3",
-      label: "Branding",
-      title: "Branding & Identidad",
-      description: "Creación de identidades visuales y sistemas de diseño",
+      label: "Casa habitación 3",
+      title: "Casa habitación 3",
+      description: "Casa habitación moderna y funcional",
       images: [
         allImages[13], // a14
         allImages[15], // a17 (como 16)
@@ -127,7 +124,7 @@ function Proyectos() {
       id: "proyecto4",
       label: "Mobile",
       title: "Diseño Mobile",
-      description: "Experiencias optimizadas para dispositivos móviles",
+      description: "Casa habitación moderna y funcional",
       images: [
         allImages[0], // a1 (puedes reusar o asignar otra)
         allImages[2], // a3
@@ -138,7 +135,7 @@ function Proyectos() {
       id: "otros",
       label: "Otros",
       title: "Proyectos Varios",
-      description: "Trabajos experimentales y proyectos personales",
+      description: "Casa habitación moderna y funcional",
       images: [
         allImages[1], // a2
         allImages[4], // a5
