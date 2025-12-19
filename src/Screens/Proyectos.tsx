@@ -5,6 +5,23 @@ import { useState, useCallback } from "react";
 import MenuHorizontal from "../Components/Proyectos/MenuHorizontal";
 import ProyectoSection from "../Components/Proyectos/ProyectoSection";
 import ImageViewer from "../Components/Proyectos/ImageViewer";
+import a1 from "../assets/Proyect/1.webp";
+import a2 from "../assets/Proyect/2.webp";
+import a3 from "../assets/Proyect/3.webp";
+import a4 from "../assets/Proyect/4.webp";
+import a5 from "../assets/Proyect/5.webp";
+import a6 from "../assets/Proyect/6.webp";
+import a7 from "../assets/Proyect/7.webp";
+import a8 from "../assets/Proyect/8.webp";
+import a9 from "../assets/Proyect/9.webp";
+import a10 from "../assets/Proyect/10.webp";
+import a11 from "../assets/Proyect/11.webp";
+import a12 from "../assets/Proyect/12.webp";
+import a13 from "../assets/Proyect/13.webp";
+import a14 from "../assets/Proyect/14.webp";
+import a15 from "../assets/Proyect/15.webp";
+import a17 from "../assets/Proyect/17.webp";
+
 import { Footer } from "../Components/Footer";
 import type {
   SectionType,
@@ -16,10 +33,10 @@ function Proyectos() {
   const [activeSection, setActiveSection] = useState<string>("proyectos");
   const [showAll, setShowAll] = useState<ShowAllState>({
     proyectos: false,
-    web: false,
-    mobile: false,
-    design: false,
-    ecommerce: false,
+    proyecto1: false,
+    proyecto2: false,
+    proyecto3: false,
+    proyecto4: false,
     otros: false,
   });
   const [viewerState, setViewerState] = useState<{
@@ -32,94 +49,105 @@ function Proyectos() {
     currentImageId: null,
   });
 
-  // Secciones del menú
+  // Todas las imágenes en un array
+  const allImages = [
+    { id: 1, src: a1, alt: "Proyecto 1 - Diseño moderno" },
+    { id: 2, src: a2, alt: "Proyecto 2 - Interfaz elegante" },
+    { id: 3, src: a3, alt: "Proyecto 3 - Layout innovador" },
+    { id: 4, src: a4, alt: "Proyecto 4 - UI minimalista" },
+    { id: 5, src: a5, alt: "Proyecto 5 - Experiencia fluida" },
+    { id: 6, src: a6, alt: "Proyecto 6 - Diseño responsivo" },
+    { id: 7, src: a7, alt: "Proyecto 7 - Concepto creativo" },
+    { id: 8, src: a8, alt: "Proyecto 8 - Paleta de colores" },
+    { id: 9, src: a9, alt: "Proyecto 9 - Tipografía moderna" },
+    { id: 10, src: a10, alt: "Proyecto 10 - Animaciones suaves" },
+    { id: 11, src: a11, alt: "Proyecto 11 - Navegación intuitiva" },
+    { id: 12, src: a12, alt: "Proyecto 12 - Branding consistente" },
+    { id: 13, src: a13, alt: "Proyecto 13 - Wireframes detallados" },
+    { id: 14, src: a14, alt: "Proyecto 14 - Prototipo interactivo" },
+    { id: 15, src: a15, alt: "Proyecto 15 - Diseño final" },
+    { id: 16, src: a17, alt: "Proyecto 16 - Vista completa" }, // Usando a17 como 16
+    // Si tuvieras a16: { id: 16, src: a16, alt: "Proyecto 16 - Detalle técnico" },
+    // { id: 17, src: a17, alt: "Proyecto 17 - Presentación final" },
+  ];
+
+  // Secciones del menú - Dividiendo las imágenes en grupos
   const sections: SectionType[] = [
     {
       id: "proyectos",
-      label: "Proyectos",
+      label: "Destacados",
       title: "Proyectos Destacados",
-      description: "Una selección de mis mejores trabajos",
+      description:
+        "Una selección de mis mejores trabajos y diseños más impactantes",
       images: [
-        { id: 1, alt: "Proyecto 1" },
-        { id: 2, alt: "Proyecto 2" },
-        { id: 3, alt: "Proyecto 3" },
-        { id: 4, alt: "Proyecto 4" },
-        { id: 5, alt: "Proyecto 5" },
-        { id: 6, alt: "Proyecto 6" },
+        allImages[0], // a1
+        allImages[1], // a2
+        allImages[2], // a3
+        allImages[3], // a4
+        allImages[4], // a5
+        allImages[5], // a6
       ],
     },
     {
-      id: "Proyecto1",
-      label: "Proyectos 1",
-      title: "Proyectos 1",
-      description: "Proyectos 1",
+      id: "proyecto1",
+      label: "Casa habitación 1",
+      title: "Casa habitación 1",
+      description: "Desarrollo de aplicaciones web modernas y funcionales",
       images: [
-        { id: 1, alt: "Web 1" },
-        { id: 2, alt: "Web 2" },
-        { id: 3, alt: "Web 3" },
-        { id: 4, alt: "Web 4" },
-        { id: 5, alt: "Web 5" },
-        { id: 6, alt: "Web 6" },
+        allImages[7], // a4
+        allImages[8], // a5
+        allImages[9], // a7
+        allImages[10], // a8
       ],
     },
     {
-      id: "Proyecto2",
-      label: "Proyecto 2",
-      title: "Proyecto 2",
-      description: "Proyecto 2",
+      id: "proyecto2",
+      label: "Diseño UI",
+      title: "Diseño de Interfaces",
+      description: "Interfaces de usuario atractivas y experiencias digitales",
       images: [
-        { id: 1, alt: "Mobile 1" },
-        { id: 2, alt: "Mobile 2" },
-        { id: 3, alt: "Mobile 3" },
-        { id: 4, alt: "Mobile 4" },
-        { id: 5, alt: "Mobile 5" },
-        { id: 6, alt: "Mobile 6" },
+        allImages[11], // a9
+        allImages[12], // a10
+        allImages[13], // a12
+        allImages[14], // a13
+        allImages[15],
       ],
     },
     {
-      id: "Proyecto3",
-      label: "Proyectos 3",
-      title: "Proyectos 3",
-      description: "Interfaces y experiencias de usuario",
+      id: "proyecto3",
+      label: "Branding",
+      title: "Branding & Identidad",
+      description: "Creación de identidades visuales y sistemas de diseño",
       images: [
-        { id: 1, alt: "Diseño 1" },
-        { id: 2, alt: "Diseño 2" },
-        { id: 3, alt: "Diseño 3" },
-        { id: 4, alt: "Diseño 4" },
-        { id: 5, alt: "Diseño 5" },
-        { id: 6, alt: "Diseño 6" },
+        allImages[13], // a14
+        allImages[15], // a17 (como 16)
       ],
     },
     {
-      id: "Proyectos 4",
-      label: "Proyectos 4",
-      title: "Proyectos 4",
-      description: "Tiendas online y plataformas de venta",
+      id: "proyecto4",
+      label: "Mobile",
+      title: "Diseño Mobile",
+      description: "Experiencias optimizadas para dispositivos móviles",
       images: [
-        { id: 1, alt: "Ecommerce 1" },
-        { id: 2, alt: "Ecommerce 2" },
-        { id: 3, alt: "Ecommerce 3" },
-        { id: 4, alt: "Ecommerce 4" },
-        { id: 5, alt: "Ecommerce 5" },
-        { id: 6, alt: "Ecommerce 6" },
+        allImages[0], // a1 (puedes reusar o asignar otra)
+        allImages[2], // a3
+        allImages[10], // a11
       ],
     },
     {
       id: "otros",
       label: "Otros",
-      title: "Otros Proyectos",
-      description: "Proyectos diversos y experimentales",
+      title: "Proyectos Varios",
+      description: "Trabajos experimentales y proyectos personales",
       images: [
-        { id: 1, alt: "Otros 1" },
-        { id: 2, alt: "Otros 2" },
-        { id: 3, alt: "Otros 3" },
-        { id: 4, alt: "Otros 4" },
-        { id: 5, alt: "Otros 5" },
-        { id: 6, alt: "Otros 6" },
+        allImages[1], // a2
+        allImages[4], // a5
+        allImages[7], // a8
+        allImages[9], // a10
+        allImages[12], // a13
+        allImages[14], // a15
       ],
     },
-
-    // ... otras secciones igual que antes
   ];
 
   // Función para hacer scroll a una sección
@@ -138,7 +166,7 @@ function Proyectos() {
   const toggleShowAll = (sectionId: string) => {
     setShowAll((prev) => ({
       ...prev,
-      [sectionId]: !prev[sectionId],
+      [sectionId]: !prev[sectionId as keyof ShowAllState],
     }));
   };
 
@@ -280,7 +308,7 @@ function Proyectos() {
               title={section.title}
               description={section.description}
               images={section.images}
-              showAll={showAll[section.id]}
+              showAll={showAll[section.id as keyof ShowAllState] || false}
               onToggleShowAll={toggleShowAll}
               onImageClick={handleImageClick}
             />

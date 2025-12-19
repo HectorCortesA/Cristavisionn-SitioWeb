@@ -3,7 +3,7 @@ import React from "react";
 interface ImageType {
   id: number;
   alt: string;
-  src?: string;
+  src: string;
 }
 
 interface ProyectoSectionProps {
@@ -39,11 +39,9 @@ const ProyectoSection: React.FC<ProyectoSectionProps> = ({
             className="image-container"
             onClick={() => onImageClick(sectionId, image.id)}
           >
-            <div className="image-placeholder">
-              {/* Para agregar imágenes reales: <img src={image.src} alt={image.alt} /> */}
-              <span className="image-text">{image.alt}</span>
+            <div className="image-wrapper">
+              <img src={image.src} alt={image.alt} className="project-image" />
               <div className="image-overlay">
-                <span className="zoom-icon">🔍</span>
                 <span className="view-text">Ver más grande</span>
               </div>
             </div>

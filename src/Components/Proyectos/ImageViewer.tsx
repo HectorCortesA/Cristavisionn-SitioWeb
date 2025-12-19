@@ -1,10 +1,11 @@
+// components/Proyectos/ImageViewer.tsx
 import React from "react";
 import "../../Css/ImageViewer.css";
 
 interface ImageType {
   id: number;
   alt: string;
-  src?: string;
+  src: string;
 }
 
 interface ImageViewerProps {
@@ -40,11 +41,8 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
 
         <div className="image-viewer-content">
           <div className="image-display">
-            {/* Imagen real - reemplazar por <img src={image.src} alt={image.alt} /> */}
-            <div className="image-full-placeholder">
-              <span className="image-full-text">{image.alt}</span>
-              <p className="image-note">(Imagen real aquí)</p>
-            </div>
+            {/* IMAGEN REAL */}
+            <img src={image.src} alt={image.alt} className="full-image" />
           </div>
 
           <div className="image-info">
