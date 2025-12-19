@@ -1,17 +1,27 @@
-body {
-  margin: 0;
+/* cotiza.css */
+
+/* Página completa */
+.cotiza-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: #000000;
+  color: white;
+  overflow-x: hidden;
 }
+
+/* Navbar */
 .contenedor-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
   padding-top: 70px;
+  width: 100%;
 }
+
 .contenedor-nav img {
   height: 60px;
   width: auto;
@@ -20,8 +30,233 @@ body {
   flex-shrink: 0;
 }
 
-.cotiza-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Contenido principal */
+.cotiza-content {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Encabezado */
+.cotiza-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.cotiza-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cotiza-subtitle {
+  font-size: 1.2rem;
+  color: #bbb;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Sección de información */
+.cotiza-info-section {
+  margin-top: 60px;
+  padding: 40px 20px;
+}
+
+.cotiza-info-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(131, 60, 60, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.info-card p {
+  color: #bbb;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Sección de contacto directo */
+.contact-direct-section {
+  margin-top: 60px;
+  padding: 40px;
+  background: rgba(131, 60, 60, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(131, 60, 60, 0.2);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-direct-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 15px;
+}
+
+.contact-item strong {
+  display: block;
+  color: #ddd;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.contact-item span {
+  display: block;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cotiza-content {
+    padding: 30px 15px;
+  }
+
+  .cotiza-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .info-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    padding-top: 70px;
+  }
+
+  .contenedor-nav img {
+    height: 50px;
+    max-width: 300px;
+  }
+
+  .cotiza-header h1 {
+    font-size: 2rem;
+  }
+
+  .cotiza-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-direct-section {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cotiza-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    padding: 25px 20px;
+  }
+
+  .cotiza-info-section h2,
+  .contact-direct-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-item span {
+    font-size: 1rem;
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cotiza-header,
+.cotiza-info-section,
+.contact-direct-section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Asegurar que todo esté dentro de los límites */
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }

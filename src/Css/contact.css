@@ -27,39 +27,34 @@ body {
 }
 
 .contact-container {
-  position: relative;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-}
-.contact-container h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
+  padding: 0 50px;
 }
 
 .contact-title {
   display: flex;
   color: white;
-  padding-left: 150px;
-  padding-bottom: 57px;
+  justify-content: center;
+  padding-bottom: 40px;
   padding-top: 30px;
   font-size: 36px;
   margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
 }
 
 .contact-info {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  gap: 50px;
   margin-bottom: 40px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  width: 256px;
-  height: 63px;
-  padding-left: 150px;
   gap: 15px;
 }
 
@@ -77,27 +72,63 @@ body {
   justify-content: center;
 }
 
-.social-section {
-  margin-bottom: 40px;
+.form-container {
+  margin-left: 450px;
 }
 
-.section-title {
+/* ELIMINAR la clase .formulario anterior que tenía margin-top negativo */
+.formulario {
+  /* Eliminar todos los estilos anteriores */
+  display: block;
+}
+
+.bottom-section {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.ubicacion-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.ubicacion-section h2 {
   color: #ffffff;
   font-size: 24px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 20px 0;
   text-align: left;
-  padding-left: 150px;
-  margin-bottom: 20px;
+}
+
+.ubicacion-section iframe {
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(254, 254, 254, 0.5);
+  width: 100%;
+  height: 350px;
+}
+
+.social-section {
+  flex: 0 0 300px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  text-align: left;
 }
 
 .social-icons {
   display: flex;
   gap: 20px;
   justify-content: flex-start;
-  padding-left: 150px;
 }
 
 .social-icon {
@@ -119,42 +150,6 @@ body {
   transform: translateY(-2px);
 }
 
-.ubicacion-section {
-  margin-bottom: 40px;
-  margin-top: -200px;
-}
-
-.ubicacion-section h2 {
-  display: flex;
-  color: #ffffff;
-  font-size: 24px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  margin: 0;
-  text-align: left;
-  padding-left: 150px;
-  padding-top: 30px;
-  margin-bottom: 20px;
-}
-
-.ubicacion-section iframe {
-  display: flex;
-  border-radius: 30px;
-  margin-left: 150px;
-  margin-top: 20px;
-  box-shadow: 0 10px 20px rgba(254, 254, 254, 0.5);
-  width: calc(100% - 300px);
-  max-width: 600px;
-}
-
-.formulario {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 150px;
-  margin-top: -450px;
-  padding-bottom: 55px;
-}
-
 /* ========== TABLET (768px - 1024px) ========== */
 @media (max-width: 1024px) {
   .contenedor-nav {
@@ -171,71 +166,52 @@ body {
 
   .contact-container {
     max-width: 90%;
+    padding: 0 20px;
   }
 
   .contact-title {
-    padding-left: 0;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     padding-top: 20px;
     font-size: 32px;
-    justify-content: center;
-    text-align: center;
   }
 
   .contact-info {
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
   }
 
-  .contact-item {
-    padding-left: 0;
-    width: auto;
-    height: auto;
-    justify-content: center;
+  .form-container {
+    margin: 40px 0;
+  }
+
+  .bottom-section {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .ubicacion-section {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .ubicacion-section iframe {
+    height: 300px;
+  }
+
+  .social-section {
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .section-title {
-    padding-left: 0;
-    font-size: 22px;
-    justify-content: center;
     text-align: center;
   }
 
   .social-icons {
-    padding-left: 0;
-    gap: 15px;
     justify-content: center;
-  }
-
-  .social-icon {
-    width: 55px;
-    height: 55px;
-  }
-
-  .divider {
-    margin: 30px 50px;
-  }
-
-  .ubicacion-section h2 {
-    padding-left: 0;
-    justify-content: center;
-    text-align: center;
-    padding-top: 190px;
-  }
-
-  .ubicacion-section iframe {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    max-width: 500px;
-    height: 300px;
-  }
-
-  .formulario {
-    padding-right: 0;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    justify-content: center;
-    padding-bottom: 0;
   }
 }
 
@@ -262,42 +238,49 @@ body {
 
   .contact-container {
     max-width: 95%;
+    padding: 0 15px;
   }
 
   .contact-title {
-    padding-left: 0;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
     padding-top: 20px;
     font-size: 24px;
   }
 
+  .contact-info {
+    gap: 15px;
+  }
+
   .contact-item {
-    padding-left: 0;
     width: 100%;
     max-width: 280px;
-    height: auto;
-    margin: 0 auto;
     justify-content: center;
-  }
-  .contact-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
   }
 
   .contact-item p {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  .form-container {
+    margin: 30px 0;
+  }
+
+  .bottom-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 30px;
+  }
+
+  .ubicacion-section iframe {
+    height: 250px;
+    border-radius: 20px;
   }
 
   .section-title {
-    padding-left: 0;
     font-size: 20px;
   }
 
   .social-icons {
-    padding-left: 0;
     gap: 15px;
   }
 
@@ -305,35 +288,17 @@ body {
     width: 50px;
     height: 50px;
   }
-
-  .divider {
-    margin: 25px 20px;
-  }
-
-  .ubicacion-section h2 {
-    padding-left: 0;
-    padding-top: 190px;
-    font-size: 20px;
-  }
-
-  .ubicacion-section iframe {
-    width: 95%;
-    height: 250px;
-    border-radius: 20px;
-  }
-
-  .formulario {
-    margin-top: 30px;
-    padding-bottom: 0;
-  }
 }
+
+/* Fuentes */
 @font-face {
   font-family: "Poppins";
-  src: url("../assets//fonts/Poppins-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Poppins";
   src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
@@ -341,6 +306,7 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Poppins";
   src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
