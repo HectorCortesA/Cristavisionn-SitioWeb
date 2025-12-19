@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-brand">
-          <p className="footer-text">C.V Cristavisionn | {currentYear}</p>
+          <p className="footer-text">Cristavisionn C.V | {currentYear}</p>
           <p className="footer-subtext">Todos los derechos reservados</p>
         </div>
 

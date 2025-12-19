@@ -40,11 +40,15 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 .Servicios h2 {
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -56,7 +60,8 @@ body {
   margin: 0 auto;
   justify-items: center;
   width: 1000px;
-  /* Elimina height: 100px si quieres que la altura se ajuste al contenido */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 /* Fondo gris para cada UL */
@@ -112,6 +117,8 @@ body {
 }
 
 .conte-title h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
   text-align: center;
   margin: 0;
   padding: 20px;
@@ -122,6 +129,8 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   margin: 40px;
   gap: 20px;
   font-size: 18px;
@@ -129,6 +138,8 @@ body {
 }
 
 .contenedor-experencia {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   background-color: brown;
   height: 70px;
   width: 300px;
@@ -156,6 +167,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   font-size: 20px;
   font-weight: bold;
 }
@@ -163,6 +176,9 @@ body {
   padding-bottom: 40px;
 }
 .btn-Presupuesto button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
   height: 50px;
   width: 140px;
   text-align: center;
@@ -305,4 +321,26 @@ body {
     width: 120px;
     font-size: 13px;
   }
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets//fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }

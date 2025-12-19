@@ -52,7 +52,9 @@ function Quienesomos() {
           <h3>Servicio dentro y fuera de la ciudad</h3>
         </div>
         <div className="btn-Presupuesto">
-          <button>Presupuesto</button>
+          <button onClick={() => (window.location.href = "/Cotiza")}>
+            Presupuesto
+          </button>
         </div>
       </div>
 

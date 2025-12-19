@@ -17,12 +17,12 @@
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-
   width: 100%;
 }
 
@@ -35,7 +35,7 @@
 .footer-text {
   color: #ffffff;
   font-size: 1.1rem;
-  font-weight: 600;
+
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -83,4 +83,12 @@
   .footer-subtext {
     font-size: 0.8rem;
   }
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }

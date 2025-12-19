@@ -57,7 +57,7 @@ function Contact() {
         <div className="divider"></div>
 
         <div className="social-section">
-          <h3 className="section-title">Redes</h3>
+          <h2 className="section-title">Redes</h2>
           <div className="social-icons">
             <div className="social-icon">
               <svg
