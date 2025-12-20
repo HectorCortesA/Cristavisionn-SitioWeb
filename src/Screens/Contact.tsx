@@ -33,7 +33,7 @@ function Contact() {
                 />
               </svg>
             </div>
-            <p>2226092957</p>
+            <p>(+52) 226092957</p>
           </div>
 
           <div className="contact-item">
@@ -51,7 +51,7 @@ function Contact() {
                 />
               </svg>
             </div>
-            <p>hector342@gmail.com</p>
+            <p>cristavicionnac@gmail.com</p>
           </div>
         </div>
 

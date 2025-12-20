@@ -2,6 +2,7 @@ import Navbar from "../Components/navbar";
 import { Footer } from "../Components/Footer";
 import crista from "../assets/Logo/Cristavicioon.webp";
 import "../Css/Quienesomos.css";
+import { Link } from "react-router-dom";
 
 function Quienesomos() {
   return (
@@ -51,10 +52,11 @@ function Quienesomos() {
         <div className="Zona">
           <h3>Servicio dentro y fuera de la ciudad</h3>
         </div>
+
         <div className="btn-Presupuesto">
-          <button onClick={() => (window.location.href = "/Cotiza")}>
-            Presupuesto
-          </button>
+          <Link to="/Cotiza">
+            <button>Presupuesto</button>
+          </Link>
         </div>
       </div>
 

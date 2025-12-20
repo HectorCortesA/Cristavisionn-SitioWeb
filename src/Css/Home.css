@@ -140,5 +140,7 @@ body {
     padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
+    padding-bottom: 120px;
+    padding-top: 50px;
   }
 }

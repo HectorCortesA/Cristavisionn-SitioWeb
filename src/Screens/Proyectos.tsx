@@ -21,6 +21,23 @@ import a13 from "../assets/Proyect/13.webp";
 import a14 from "../assets/Proyect/14.webp";
 import a15 from "../assets/Proyect/15.webp";
 import a17 from "../assets/Proyect/17.webp";
+import a18 from "../assets/Proyect/18.webp";
+import a19 from "../assets/Proyect/19.webp";
+import a20 from "../assets/Proyect/20.webp";
+import a21 from "../assets/Proyect/21.webp";
+import a22 from "../assets/Proyect/22.webp";
+import a25 from "../assets/Proyect/25.webp";
+import a26 from "../assets/Proyect/26.webp";
+import a27 from "../assets/Proyect/27.webp";
+import a28 from "../assets/Proyect/28.webp";
+import a29 from "../assets/Proyect/29.webp";
+import a30 from "../assets/Proyect/30.webp";
+import a31 from "../assets/Proyect/31.webp";
+import a33 from "../assets/Proyect/33.webp";
+import a40 from "../assets/Proyect/40.webp";
+import a41 from "../assets/Proyect/41.webp";
+import a50 from "../assets/Proyect/50.webp";
+import a51 from "../assets/Proyect/51.webp";
 
 import { Footer } from "../Components/Footer";
 import type {
@@ -67,6 +84,23 @@ function Proyectos() {
     { id: 14, src: a14, alt: "Proyecto 3" },
     { id: 15, src: a15, alt: "Proyecto 3" },
     { id: 16, src: a17, alt: "Proyecto 3" },
+    { id: 17, src: a18, alt: "Proyecto 3" },
+    { id: 18, src: a19, alt: "Proyecto 3" },
+    { id: 19, src: a20, alt: "Proyecto 3" },
+    { id: 20, src: a21, alt: "Proyecto 3" },
+    { id: 21, src: a22, alt: "Proyecto 3" },
+    { id: 22, src: a25, alt: "Proyecto 3" },
+    { id: 23, src: a26, alt: "Proyecto 3" },
+    { id: 24, src: a27, alt: "Proyecto 3" },
+    { id: 25, src: a28, alt: "Proyecto 3" },
+    { id: 26, src: a29, alt: "Proyecto 3" },
+    { id: 27, src: a30, alt: "Proyecto 3" },
+    { id: 28, src: a31, alt: "Proyecto 3" },
+    { id: 29, src: a33, alt: "Proyecto 3" },
+    { id: 30, src: a40, alt: "Proyecto 3" },
+    { id: 31, src: a41, alt: "Proyecto 3" },
+    { id: 32, src: a50, alt: "Proyecto 3" },
+    { id: 33, src: a51, alt: "Proyecto 3" },
   ];
 
   // Secciones del menú - Dividiendo las imágenes en grupos
@@ -108,27 +142,35 @@ function Proyectos() {
         allImages[13], // a12
         allImages[14], // a13
         allImages[15],
+        allImages[16],
       ],
     },
     {
       id: "proyecto3",
-      label: "Casa habitación 3",
-      title: "Casa habitación 3",
-      description: "Casa habitación moderna y funcional",
+      label: "Plaza Comercial",
+      title: "Plaza Comercial",
+      description: "Plaza comercial moderna y funcional",
       images: [
-        allImages[13], // a14
-        allImages[15], // a17 (como 16)
+        allImages[17], // a14
+        allImages[18],
+        allImages[19],
+        allImages[20],
+        allImages[26],
       ],
     },
     {
       id: "proyecto4",
-      label: "Mobile",
-      title: "Diseño Mobile",
+      label: "Casa habitación 3",
+      title: "Casa habitación 3",
       description: "Casa habitación moderna y funcional",
       images: [
-        allImages[0], // a1 (puedes reusar o asignar otra)
-        allImages[2], // a3
-        allImages[10], // a11
+        allImages[21],
+
+        allImages[23],
+        allImages[24],
+        allImages[25],
+        allImages[27],
+        allImages[28],
       ],
     },
     {
@@ -137,12 +179,10 @@ function Proyectos() {
       title: "Proyectos Varios",
       description: "Casa habitación moderna y funcional",
       images: [
-        allImages[1], // a2
-        allImages[4], // a5
-        allImages[7], // a8
-        allImages[9], // a10
-        allImages[12], // a13
-        allImages[14], // a15
+        allImages[29], // a2
+        allImages[30], // a5
+        allImages[31], // a8
+        allImages[32], // a13
       ],
     },
   ];
