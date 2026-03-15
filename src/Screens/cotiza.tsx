@@ -29,7 +29,7 @@ function Cotiza() {
           <h2>¿Por qué cotizar con nosotros?</h2>
           <div className="info-grid">
             <div className="info-card">
-              <div className="info-icon">🏆</div>
+              <div className="info-icon"></div>
               <h3>37+ Años de Experiencia</h3>
               <p>
                 Trayectoria que garantiza calidad y profesionalismo en cada
@@ -37,17 +37,17 @@ function Cotiza() {
               </p>
             </div>
             <div className="info-card">
-              <div className="info-icon">⚡</div>
+              <div className="info-icon"></div>
               <h3>Respuesta Rápida</h3>
               <p>Cotización en menos de 24 horas hábiles</p>
             </div>
             <div className="info-card">
-              <div className="info-icon">🔧</div>
+              <div className="info-icon"></div>
               <h3>Instalación Profesional</h3>
               <p>Equipo especializado en instalación de cristalería</p>
             </div>
             <div className="info-card">
-              <div className="info-icon">💰</div>
+              <div className="info-icon"></div>
               <h3>Mejor Precio Garantizado</h3>
               <p>Calidad premium a precios competitivos</p>
             </div>
