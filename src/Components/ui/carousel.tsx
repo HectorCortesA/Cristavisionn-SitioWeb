@@ -1,5 +1,8 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import foto12 from "../../assets/Proyect/13.webp";
+import foto13 from "../../assets/Proyect/31.webp";
+import foto14 from "../../assets/Proyect/4.webp";
 
 export function EmblaCarousel() {
   const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
@@ -8,22 +11,13 @@ export function EmblaCarousel() {
     <div className="embla" ref={emblaRef}>
       <div className="embla__container">
         <div className="embla__slide">
-          <img
-            src="https://cristaleriabarcena.com/wp-content/uploads/2016/12/cristaleria-barcena-venta-y-colocacion-cristales-para-ventanas.jpg"
-            alt="Slide 1"
-          />
+          <img src={foto12} alt="Slide 1" />
         </div>
         <div className="embla__slide">
-          <img
-            src="https://0201.nccdn.net/1_2/000/000/130/eb1/ventanas-para-casas-modernas.jpg"
-            alt="Slide 2"
-          />
+          <img src={foto13} alt="Slide 2" />
         </div>
         <div className="embla__slide">
-          <img
-            src="https://vidsa.cr/wp-content/uploads/2021/10/ventanales-de-vidrio.jpg"
-            alt="Slide 3"
-          />
+          <img src={foto14} alt="Slide 3" />
         </div>
       </div>
     </div>
