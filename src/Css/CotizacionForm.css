@@ -1,388 +1,274 @@
-/* CotizacionForm.css */
-
-/* Contenedor principal del formulario */
+/* Franja blanca: un formulario largo se lee mejor sobre claro */
 .cotizacion-form-container {
   width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-  position: relative;
+  max-width: none;
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
 }
 
-/* El formulario completo con blur blanco */
 .cotizacion-form {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 88px) clamp(16px, 4vw, 32px);
 }
 
-/* Fondo blur blanco al 50% - DENTRO del formulario */
 .cotizacion-form .form-background-blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.5); /* Blanco al 50% */
-  backdrop-filter: blur(15px); /* Efecto blur */
-  -webkit-backdrop-filter: blur(15px);
-  z-index: 1;
+  display: none;
 }
 
-/* Contenido del formulario - encima del blur */
 .cotizacion-form-content {
-  position: relative;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.85); /* Fondo oscuro para contraste */
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font);
+  color: var(--black);
 }
 
-/* Header del formulario */
-.form-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.form-header h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.subtitle {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  color: #bbb;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  line-height: 1.5;
-}
-
-/* Secciones del formulario */
-.form-header h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: white;
-  margin: 30px 0 20px 0;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #833c3c;
+.cotizacion-form .form-header {
+  margin: 0;
   text-align: left;
 }
 
-/* Grid para campos */
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-bottom: 25px;
+.cotizacion-form .form-header h1 {
+  margin: 0 0 10px;
+  font: 600 clamp(1.8rem, 3.6vw, 2.6rem) / 1.1 var(--font);
+  letter-spacing: -0.03em;
+  color: var(--black);
 }
 
-/* Grupos de formulario */
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group label {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  display: block;
-  margin-bottom: 10px;
-  color: #ddd;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-/* Campos de entrada */
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  color: white;
+.cotizacion-form .subtitle {
+  margin: 0;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.cotizacion-form .form-header h2 {
+  margin: clamp(32px, 5vw, 48px) 0 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font: 600 1.1rem / 1.3 var(--font);
+  color: var(--black);
+}
+
+.cotizacion-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+}
+
+.cotizacion-form .form-grid > .form-group:only-child {
+  grid-column: 1 / -1;
+}
+
+.cotizacion-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.cotizacion-form .form-group label {
+  margin: 0 0 6px;
+  font: 500 13px/1.4 var(--font);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.cotizacion-form .form-group > label:not(:first-child) {
+  margin-top: 14px;
+}
+
+.cotizacion-form .required {
+  color: var(--red);
+}
+
+/* Campos: superficie suave, sin contorno */
+.cotizacion-form .form-group input:not([type="checkbox"]):not([type="file"]),
+.cotizacion-form .form-group select,
+.cotizacion-form .form-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.85em 1em;
+  border: 0;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.045);
+  color: var(--black);
+  font: 400 15px/1.4 var(--font);
   outline: none;
-  border-color: #833c3c;
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 0 3px rgba(131, 60, 60, 0.2);
+  transition: background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+.cotizacion-form .form-group input::placeholder,
+.cotizacion-form .form-group textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
 }
 
-/* Textarea */
-.form-group textarea {
+.cotizacion-form .form-group input:focus,
+.cotizacion-form .form-group select:focus,
+.cotizacion-form .form-group textarea:focus {
+  background-color: rgba(0, 0, 0, 0.07);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.45);
+}
+
+.cotizacion-form .form-group textarea {
+  min-height: 110px;
   resize: vertical;
-  min-height: 100px;
-  line-height: 1.5;
 }
 
-/* File input */
-.form-group input[type="file"] {
-  padding: 12px;
-  background: rgba(131, 60, 60, 0.1);
-  border: 2px dashed rgba(131, 60, 60, 0.3);
-}
-
-.form-group input[type="file"]:hover {
-  background: rgba(131, 60, 60, 0.15);
-  border-color: rgba(131, 60, 60, 0.5);
-}
-
-.file-hint {
-  display: block;
-  margin-top: 8px;
-  color: #888;
-  font-size: 0.85rem;
-  font-style: italic;
-}
-
-/* Checkbox */
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 30px;
-}
-
-.checkbox-group input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-top: 4px;
-  accent-color: #833c3c;
-}
-
-.checkbox-group label {
-  margin-bottom: 0;
-  line-height: 1.5;
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-.checkbox-group a {
-  color: #b35151;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.checkbox-group a:hover {
-  color: #ff6b6b;
-  text-decoration: underline;
-}
-
-/* Sección de términos */
-.terms-section {
-  background: rgba(131, 60, 60, 0.05);
-  border: 1px solid rgba(131, 60, 60, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 30px 0;
-}
-
-/* Botones de acción */
-.form-actions {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 40px 0 20px;
-}
-
-.btn-submit,
-.btn-clear {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  height: 50px;
-  width: 250px;
-  text-align: center;
-}
-
-.btn-submit {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.btn-clear {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .cotizacion-form-container {
-    margin: 20px auto;
-    padding: 0 15px;
-  }
-
-  .cotizacion-form-content {
-    padding: 30px 25px;
-  }
-
-  .form-header h1 {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .form-header h2 {
-    font-size: 1.3rem;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .form-actions {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .btn-submit,
-  .btn-clear {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 0.9rem;
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .checkbox-group {
-    margin-top: 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cotizacion-form-content {
-    padding: 25px 20px;
-  }
-
-  .form-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .form-header h2 {
-    font-size: 1.2rem;
-    margin: 25px 0 15px 0;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 12px 15px;
-    font-size: 0.95rem;
-  }
-  .form-actions {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-    padding-left: 40px;
-  }
-
-  .btn-submit,
-  .btn-clear {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 13px;
-
-    height: 50px;
-    width: 200px;
-  }
-
-  .terms-section {
-    padding: 15px;
-  }
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cotizacion-form-content {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* Estilos para estados de validación */
-.form-group input:invalid:not(:focus):not(:placeholder-shown),
-.form-group select:invalid:not(:focus),
-.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
-  border-color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.05);
-}
-
-/* Estilos para select */
-.form-group select {
+.cotizacion-form .form-group select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  -webkit-appearance: none;
+  padding-right: 2.6em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23000' stroke-opacity='.55' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 12px;
-  padding-right: 40px;
+  background-position: right 1em center;
 }
 
-/* Mejorar la legibilidad */
-.form-group input:disabled,
-.form-group select:disabled,
-.form-group textarea:disabled {
-  opacity: 0.7;
+.cotizacion-form .form-group :is(input, select, textarea):user-invalid {
+  background-color: rgba(157, 0, 0, 0.07);
+}
+
+.cotizacion-form .form-group :is(input, select, textarea):disabled {
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* Scrollbar personalizado para textarea */
-.form-group textarea::-webkit-scrollbar {
-  width: 8px;
+.cotizacion-form .form-group input[type="file"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.6em;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.045);
+  font: 400 14px var(--font);
+  color: rgba(0, 0, 0, 0.7);
 }
 
-.form-group textarea::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
+.cotizacion-form input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 0.55em 1.1em;
+  border: 0;
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--white);
+  font: 500 13px var(--font);
+  cursor: pointer;
 }
 
-.form-group textarea::-webkit-scrollbar-thumb {
-  background: rgba(131, 60, 60, 0.5);
-  border-radius: 4px;
+.cotizacion-form .file-hint {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.form-group textarea::-webkit-scrollbar-thumb:hover {
-  background: rgba(131, 60, 60, 0.7);
+.cotizacion-form .terms-section {
+  margin-top: clamp(28px, 4vw, 40px);
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cotizacion-form .form-group.checkbox-group {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0;
+}
+
+.cotizacion-form .checkbox-group input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--red);
+}
+
+.cotizacion-form .form-group.checkbox-group > label {
+  margin: 0;
+  font: 400 13.5px/1.6 var(--font);
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.cotizacion-form .checkbox-group a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cotizacion-form .form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.form-actions .btn-submit,
+.form-actions .btn-clear {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 999px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: filter 0.3s var(--ease), background-color 0.3s var(--ease),
+    color 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.form-actions .btn-submit {
+  padding: 1em 2.1em;
+  background: var(--red);
+  color: var(--white);
+  font: 500 15px/1 var(--font);
+}
+
+.form-actions .btn-clear {
+  padding: 1em 1.4em;
+  color: rgba(0, 0, 0, 0.6);
+  font: 400 14px/1 var(--font);
+}
+
+.form-actions button::after {
+  content: none;
+}
+
+.form-actions .btn-submit:hover:not(:disabled) {
+  filter: brightness(1.18);
+}
+
+.form-actions .btn-clear:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--black);
+}
+
+.form-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .cotizacion-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .cotizacion-form .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.cotizacion-form .form-group input[type="date"] {
+  min-height: 3em;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .cotizacion-form .form-group input:not([type="checkbox"]):not([type="file"]),
+  .cotizacion-form .form-group select,
+  .cotizacion-form .form-group textarea {
+    font-size: 16px; /* menos de 16px hace que iOS amplíe la página al enfocar */
+  }
+  .cotizacion-form .checkbox-group input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @font-face {

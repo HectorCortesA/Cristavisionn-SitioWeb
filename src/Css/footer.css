@@ -8,8 +8,8 @@
 /* Footer */
 .footer-container {
   width: 100%;
-  background: #383838;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 2rem 1rem;
   overflow-x: hidden; /* Evita cualquier desbordamiento */
 }
@@ -37,7 +37,6 @@
   font-size: 1.1rem;
 
   margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .footer-subtext {

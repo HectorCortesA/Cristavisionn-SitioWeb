@@ -1,1 +1,48 @@
+/* Sistema de diseño Cristavisionn: negro, blanco y rojo solo como acento */
+:root {
+  --black: #000;
+  --white: #fff;
+  --red: #9d0000;
+  --font: "Poppins", system-ui, sans-serif;
+  --radius-s: 12px;
+  --radius-m: 20px; /* mismo radio que el navbar */
+  --ease: cubic-bezier(0.25, 1, 0.5, 1); /* misma curva que los botones glass */
+  --glass-blur: blur(14px) saturate(1.4);
+}
 
+body {
+  margin: 0;
+  background: var(--black);
+  font-family: var(--font);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Los botones con `all: unset` pierden el contorno de foco: se devuelve aquí
+   (especificidad suficiente) para que el teclado siga viéndose. */
+.navbar .nav-button:focus-visible,
+.navbar .navbar-toggle:focus-visible,
+.viewer .viewer-btn:focus-visible,
+.btn-Presupuesto button:focus-visible,
+.contact-form .submit-button:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+.form-actions button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}

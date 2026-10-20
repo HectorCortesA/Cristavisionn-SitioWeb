@@ -17,75 +17,6 @@
   --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Navbar Styles */
-.navbar {
-  width: 700px;
-  height: 63px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #9d0000;
-  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  gap: 20px;
-  padding: 10px 20px;
-}
-
-/* ========== BUTTON WRAP CONTAINER ========== */
-.button-wrap {
-  position: relative;
-  z-index: 2;
-  border-radius: 999vw;
-  background: transparent;
-  pointer-events: none;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
-
-/* ========== BUTTON SHADOW CONTAINER ========== */
-.button-shadow {
-  --shadow-cuttoff-fix: 2em;
-  position: absolute;
-  width: calc(100% + var(--shadow-cuttoff-fix));
-  height: calc(100% + var(--shadow-cuttoff-fix));
-  top: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  left: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  filter: blur(clamp(2px, 0.125em, 12px));
-  -webkit-filter: blur(clamp(2px, 0.125em, 12px));
-  -moz-filter: blur(clamp(2px, 0.125em, 12px));
-  -ms-filter: blur(clamp(2px, 0.125em, 12px));
-  overflow: visible;
-  pointer-events: none;
-}
-
-/* Shadow */
-.button-shadow::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  border-radius: 999vw;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-  width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-  height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-  top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-  left: calc(var(--shadow-cuttoff-fix) - 0.875em);
-  padding: 0.125em;
-  box-sizing: border-box;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-  overflow: visible;
-  opacity: 1;
-}
-
 /* ========== BUTTON BASE STYLES ========== */
 button {
   /* Basic Styling */
@@ -244,69 +175,202 @@ button:active::after {
   }
 }
 
-/* ========== HOVER EFFECTS ========== */
-.button-wrap:has(button:hover) .button-shadow {
-  filter: blur(clamp(2px, 0.0625em, 6px));
-  -webkit-filter: blur(clamp(2px, 0.0625em, 6px));
-  -moz-filter: blur(clamp(2px, 0.0625em, 6px));
-  -ms-filter: blur(clamp(2px, 0.0625em, 6px));
-  transition: filter var(--anim--hover-time) var(--anim--hover-ease);
+/* ==========================================================
+   NAVBAR FLOTANTE — cápsula Glassmorphism
+   El contenedor .contenedor-nav (logo + menú) pasa a ser la cápsula.
+   Se escribe con .App delante para imponerse a las definiciones
+   antiguas de .contenedor-nav repetidas en cada pantalla.
+   ========================================================== */
+.App .contenedor-nav {
+  --logo-w: 280px; /* el logo conserva su proporción (altura ≈ 44px) */
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1180px, calc(100% - 32px));
+  max-width: none;
+  margin: 16px auto 0;
+  padding: 8px 10px 8px 14px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.03)
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 12px 32px -14px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
 }
 
-.button-wrap:has(button:hover) .button-shadow::after {
-  top: calc(var(--shadow-cuttoff-fix) - 0.875em);
-  opacity: 1;
-}
-
-/* Rotation */
-.button-wrap:has(button:active) {
-  transform: rotate3d(1, 0, 0, 25deg);
-}
-
-.button-wrap:has(button:active) button {
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.125em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0.225em 0.05em 0 rgba(0, 0, 0, 0.05),
-    0 0.25em 0 0 rgba(255, 255, 255, 0.75),
-    inset 0 0.25em 0.05em 0 rgba(0, 0, 0, 0.15);
-}
-
-.button-wrap:has(button:active) .button-shadow {
-  filter: blur(clamp(2px, 0.125em, 12px));
-  -webkit-filter: blur(clamp(2px, 0.125em, 12px));
-  -moz-filter: blur(clamp(2px, 0.125em, 12px));
-  -ms-filter: blur(clamp(2px, 0.125em, 12px));
-}
-
-.button-wrap:has(button:active) .button-shadow::after {
-  top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-  opacity: 0.75;
-}
-
-.button-wrap:has(button:active) span {
-  text-shadow: 0.025em 0.25em 0.05em rgba(0, 0, 0, 0.12);
-}
-
-/* Responsive */
-@media (max-width: 850px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-    min-height: 63px;
+@supports not (backdrop-filter: blur(1px)) {
+  .App .contenedor-nav {
+    background-color: rgba(0, 0, 0, 0.9);
   }
+}
 
-  .navbar-container {
+/* Logotipo original: mismo archivo, mismo borde, misma posición (izquierda) */
+.App .contenedor-nav img {
+  width: var(--logo-w);
+  height: auto;
+  max-width: none;
+  border-radius: 10px;
+  filter: none;
+  flex-shrink: 0;
+}
+
+/* Los dos contenedores .navbar anidados (div de la pantalla + <nav>) */
+.App .contenedor-nav .navbar {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 1 auto;
+}
+
+.App .contenedor-nav .navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Enlaces: texto sobre el cristal; solo el activo tiene superficie */
+.navbar .nav-button {
+  all: unset; /* anula el estilo glass global de `button` */
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0.7em 1.15em;
+  border-radius: 999px;
+  font: 400 14px/1 var(--font);
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.72);
+  white-space: nowrap;
+  transition: color 0.3s var(--ease), background-color 0.3s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar .nav-button::after {
+  content: none;
+}
+
+.navbar .nav-button:hover {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar .nav-button.active {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Cotiza: la acción principal es el único elemento con rojo */
+.navbar .nav-button.is-cta,
+.navbar .nav-button.is-cta.active {
+  margin-left: 6px;
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.navbar .nav-button.is-cta:hover {
+  background-color: var(--red);
+  filter: brightness(1.18);
+}
+
+/* Botón del menú (solo móvil) */
+.navbar .navbar-toggle {
+  all: unset;
+  box-sizing: border-box;
+  display: none;
+  place-items: center;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  color: var(--white);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar .navbar-toggle::after {
+  content: none;
+}
+
+.navbar .navbar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+@keyframes navbar-links-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* Tabletas y móviles: logo + botón; el menú se despliega dentro de la cápsula */
+@media (max-width: 960px) {
+  .App .contenedor-nav {
+    --logo-w: min(250px, calc(100vw - 104px));
+    top: 12px;
     flex-wrap: wrap;
-    padding: 10px;
-    gap: 15px;
+    gap: 0;
+    width: calc(100% - 24px);
+    margin-top: 12px;
+    padding: 6px 6px 6px 12px;
+    border-radius: 26px;
   }
 
-  button span {
-    font-size: 12px;
-    padding-inline: 1.2em;
-    padding-block: 0.75em;
+  .App .contenedor-nav .navbar {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .navbar .navbar-toggle {
+    display: grid;
+  }
+
+  .App .contenedor-nav .navbar-container {
+    display: none;
+  }
+
+  .App .contenedor-nav .navbar-container.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 2px;
+    margin-top: 6px;
+    padding: 8px 0 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    animation: navbar-links-in 0.3s var(--ease);
+  }
+
+  .navbar .nav-button {
+    padding: 0.95em 1.1em;
+    border-radius: 16px;
+    font-size: 15px;
+  }
+
+  .navbar .nav-button.is-cta,
+  .navbar .nav-button.is-cta.active {
+    margin: 6px 0 0;
+    text-align: center;
+    border-radius: 999px;
   }
 }
 

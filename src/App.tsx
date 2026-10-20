@@ -5,10 +5,12 @@ import Contact from "./Screens/Contact";
 import Quienesomos from "./Screens/Quienesomos";
 import Cotiza from "./Screens/cotiza";
 import Proyectos from "./Screens/Proyectos";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/Contacto" element={<Contact />} />

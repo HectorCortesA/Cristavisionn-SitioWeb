@@ -1,275 +1,96 @@
-/* cotiza.css */
-
-/* Página completa */
 .cotiza-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #000000;
-  color: white;
-  overflow-x: hidden;
+  background: #000;
+  color: var(--white);
+  overflow-x: clip; /* clip, no hidden: hidden rompe el navbar fijo */
+  font-family: var(--font);
 }
 
-/* Navbar */
-.contenedor-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
-  padding-top: 70px;
-  width: 100%;
-}
-
-.contenedor-nav img {
-  border-radius: 10px;
-  height: 60px;
-  width: auto;
-  max-width: 450px;
-  filter: drop-shadow(0px 2px 8px rgb(255, 255, 255));
-  flex-shrink: 0;
-}
-
-/* Contenido principal */
 .cotiza-content {
   flex: 1;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 40px 20px;
   width: 100%;
 }
 
-/* Encabezado */
+.cotiza-header,
+.cotiza-info-section {
+  box-sizing: border-box;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
 .cotiza-header {
-  text-align: center;
-  margin-bottom: 50px;
-  padding: 0 20px;
+  padding: clamp(40px, 7vw, 88px) clamp(16px, 4vw, 32px) clamp(32px, 5vw, 56px);
 }
 
 .cotiza-header h1 {
-  font-size: 2.8rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  margin-bottom: 20px;
-  color: white;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0 0 16px;
+  font: 600 clamp(2.4rem, 6vw, 4.5rem) / 1 var(--font);
+  letter-spacing: -0.04em;
 }
 
 .cotiza-subtitle {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: #bbb;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 52ch;
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.68);
 }
 
-/* Sección de información */
 .cotiza-info-section {
-  margin-top: 60px;
-  padding: 40px 20px;
+  padding: clamp(56px, 9vw, 112px) clamp(16px, 4vw, 32px);
 }
 
 .cotiza-info-section h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: white;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+  font: 600 clamp(1.5rem, 2.6vw, 2.25rem) / 1.1 var(--font);
+  letter-spacing: -0.03em;
 }
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.info-card h3 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-}
-.info-card p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(131, 60, 60, 0.3);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .info-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  display: none;
 }
 
 .info-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: white;
+  margin: 0 0 8px;
+  font: 600 1.05rem / 1.3 var(--font);
 }
 
 .info-card p {
-  color: #bbb;
-  line-height: 1.5;
+  margin: 0;
   font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.62);
 }
 
-/* Sección de contacto directo */
-.contact-direct-section {
-  margin-top: 60px;
-  padding: 40px;
-  background: rgba(131, 60, 60, 0.1);
-  border-radius: 15px;
-  border: 1px solid rgba(131, 60, 60, 0.2);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-direct-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: white;
-}
-
-.contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-.contact-item {
-  text-align: center;
-  padding: 15px;
-}
-
-.contact-item strong {
-  display: block;
-  color: #ddd;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-.contact-item span {
-  display: block;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .cotiza-content {
-    padding: 30px 15px;
-  }
-
-  .cotiza-header h1 {
-    font-size: 2.3rem;
-  }
-
+@media (max-width: 960px) {
   .info-grid {
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
-  .contenedor-nav {
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px;
-    padding-top: 70px;
-  }
-
-  .contenedor-nav img {
-    height: 50px;
-    max-width: 300px;
-  }
-
-  .cotiza-header h1 {
-    font-size: 2rem;
-  }
-
-  .cotiza-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-info {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .contact-direct-section {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cotiza-header h1 {
-    font-size: 1.7rem;
-  }
-
+@media (max-width: 520px) {
   .info-grid {
     grid-template-columns: 1fr;
   }
-
-  .info-card {
-    padding: 25px 20px;
-  }
-
-  .cotiza-info-section h2,
-  .contact-direct-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-item span {
-    font-size: 1rem;
-  }
 }
 
-/* Animación de entrada */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cotiza-header,
-.cotiza-info-section,
-.contact-direct-section {
-  animation: fadeIn 0.8s ease-out;
-}
-
-/* Asegurar que todo esté dentro de los límites */
+/* Globales que ya existían */
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 * {
